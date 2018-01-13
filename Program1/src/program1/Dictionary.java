@@ -26,14 +26,11 @@ public class Dictionary
             dictList.add(dictSrcScan.nextLine());
         }
         
-        this.heurKeyMap = fillMap();
-        
-        
+        this.heurKeyMap = fillMap();   
     }
     
     public void chkWord(String word)
     {
-        String foundWord = "";
         //keeps track of if we found anything
         int wordsFound = 0;
         
@@ -84,7 +81,7 @@ public class Dictionary
                 //print out message
                 System.out.print("no matches found");
             }
-    }
+        }
     
     //fills heurKeyMap
     private char[][] fillMap()
