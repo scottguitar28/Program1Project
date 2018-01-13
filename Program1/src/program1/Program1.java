@@ -1,21 +1,37 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package program1;
+
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 /**
  *
- * @author scottmitchell
+ * @author Scott Mitchell & Daniel Jirasek
  */
 public class Program1 {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
+    public static void main(String[] args) throws FileNotFoundException {
+        
+        //instatiate scanner for keyboard input
+        Scanner input = new Scanner(System.in);
+        
+        //prompt user for input
+        System.out.println("Enter a text message. Type \"done\" to exit.");
+        String userInput = input.nextLine();
+        
+        Dictionary dict = new Dictionary();
+        
+        while(userInput.equals("done"))
+        {
+            TextMessage textMsg = new TextMessage(userInput);
+            
+            for(int i = 0; i < textMsg.getMsgWordsLength(); i++)
+            {
+                dict.chkWord(textMsg.getMsgWord(i));
+            }
+            
+            System.out.print("\n\nEnter another text message or type \"done\" to exit: ");
+            userInput = input.nextLine();
+        }
     }
     
 }
