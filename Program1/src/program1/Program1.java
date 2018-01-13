@@ -6,10 +6,14 @@ import java.util.Scanner;
 /**
  *
  * @author Scott Mitchell & Daniel Jirasek
+ * 1/13/18
+ * This program takes a "text message" from the user and returns "auto-corrected" words as suggestions
  */
-public class Program1 {
+public class Program1
+{
 
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) throws FileNotFoundException
+    {
         
         //instatiate scanner for keyboard input
         Scanner input = new Scanner(System.in);
@@ -40,5 +44,4 @@ public class Program1 {
             userInput = input.nextLine();
         }
     }
-    
 }
