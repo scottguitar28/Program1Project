@@ -17,6 +17,7 @@ public class TextMessage
     public TextMessage(String message)
     {
         //TODO puts argument into msg and then splits msg into its individual words and adds them to msgWords
+        //when splitting into words, also remove any punctuation.
     }
     
     //returns the original message
