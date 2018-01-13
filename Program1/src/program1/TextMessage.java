@@ -17,12 +17,9 @@ public class TextMessage
     public TextMessage(String msg)
     {
         this.msg = msg;
-        
+        this.msgWords = new ArrayList<String>();
         //all non-word characters and non-whitespace characters are removed
-        msg = msg.replaceAll("[^\\w][^\\s]+","");
-        
-        //msg is converted to lower case
-        msg = msg.toLowerCase();
+        this.msg = this.msg.replaceAll("[\\W][\\d]+","");
         
         String[] words = msg.split(" ");
         

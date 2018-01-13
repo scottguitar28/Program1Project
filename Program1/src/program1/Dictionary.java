@@ -49,7 +49,7 @@ public class Dictionary
             //use stringbuilder to modify string with elements of heuristicKeyMap more easily
             StringBuilder strBuild = new StringBuilder(word.toLowerCase());
             //keeps track of the current letter
-            char currentChar = word.charAt(i);
+            char currentChar = strBuild.charAt(i);
             
             //keeps track of where the current letter is in heurKeyMap. Initialized to -1 so that it doesn't mistakenly start at the position of 'a' in heurKeyMap which is 0
             int mapPos = -1;
@@ -67,6 +67,7 @@ public class Dictionary
             //j stands in for position of replacement char
             for (int j = 1; j < heurKeyMap[mapPos].length; j++)
             {
+                
                 strBuild.deleteCharAt(i);
                 strBuild.insert(i, heurKeyMap[mapPos][j]);
 

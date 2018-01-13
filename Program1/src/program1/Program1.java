@@ -37,6 +37,7 @@ public class Program1
                 System.out.print(textMsg.getMsgWord(i) + ": ");
                 //method checks the word and prints out the results of each word
                 dict.chkWord(textMsg.getMsgWord(i));
+                System.out.print("\n");
             }
             
             //prompt for next round of input
