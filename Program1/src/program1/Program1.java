@@ -15,14 +15,14 @@ public class Program1 {
         Scanner input = new Scanner(System.in);
         
         //prompt user for input
-        System.out.println("Enter a text message. Type \"done\" to exit.");
+        System.out.print("Enter a text message. Type \"done\" to exit: ");
         String userInput = input.nextLine();
         
         //instatiate new Dictionary object
         Dictionary dict = new Dictionary();
         
         //program loop continues until user is done
-        while(userInput.equals("done"))
+        while(!userInput.equals("done"))
         {
             //instatiate new TextMessage object using user input
             TextMessage textMsg = new TextMessage(userInput);

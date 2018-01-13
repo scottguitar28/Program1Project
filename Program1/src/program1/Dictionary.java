@@ -28,6 +28,7 @@ public class Dictionary
         
         this.heurKeyMap = fillMap();
         
+        
     }
     
     public void chkWord(String word)
@@ -36,13 +37,14 @@ public class Dictionary
         //keeps track of if we found anything
         int wordsFound = 0;
         
-        //use stringbuilder to modify string with elements of heuristicKeyMap more easily
-        StringBuilder strBuild = new StringBuilder(word);
+        
         
         //for loop looks through each letter in word
         //i will stand in for the position of the current character in the word
         for(int i = 0; i < word.length(); i++)
         {
+            //use stringbuilder to modify string with elements of heuristicKeyMap more easily
+            StringBuilder strBuild = new StringBuilder(word);
             //keeps track of the current letter
             char currentChar = word.charAt(i);
             
@@ -59,9 +61,9 @@ public class Dictionary
             
             //loop replaces current word character with one from the heurKeyMap, checks for a match in dictList, and prints if there is a match
             //j stands in for replacement char
-            for(int j = 0; j < heurKeyMap[mapPos].length; j++)
+            for(int j = 1; j < heurKeyMap[mapPos].length; j++)
             {
-                strBuild.deleteCharAt(mapPos);
+                strBuild.deleteCharAt(i);
                 strBuild.insert(i, heurKeyMap[mapPos][j]);
                 
                 //if a there's a match
@@ -72,15 +74,14 @@ public class Dictionary
                     //counter keeps track of if there are any matches found probably could've put this in its own function but meh
                     wordsFound++;
                 }                
-            }
-            
-            //if no matches were found in the dictionary
+            } 
+        }
+        //if no matches were found in the dictionary
             if(wordsFound == 0)
             {
                 //print out message
                 System.out.print("no matches found");
             }
-        }
     }
     
     //fills heurKeyMap
