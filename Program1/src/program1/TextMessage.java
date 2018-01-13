@@ -14,10 +14,22 @@ public class TextMessage
     private ArrayList<String> msgWords;
     
     //constructor
-    public TextMessage(String message)
+    public TextMessage(String msg)
     {
-        //TODO puts argument into msg and then splits msg into its individual words and adds them to msgWords
-        //when splitting into words, also remove any punctuation.
+        this.msg = msg;
+        
+        //all non-word characters and non-whitespace characters are removed
+        msg = msg.replaceAll("[^\\w][^\\s]+","");
+        
+        //msg is converted to lower case
+        msg = msg.toLowerCase();
+        
+        String[] words = msg.split(" ");
+        
+       for(String elements: words)
+       {
+           this.msgWords.add(elements);
+       }
     }
     
     //returns the original message
