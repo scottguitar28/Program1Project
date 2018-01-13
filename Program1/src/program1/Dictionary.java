@@ -71,6 +71,10 @@ public class Dictionary
                     System.out.print(dictList.get(dictList.indexOf(strBuild.toString())) + " ");
                     //counter keeps track of if there are any matches found probably could've put this in its own function but meh
                     wordsFound++;
+                } else if(dictList.contains(capitalize(strBuild.toString())))
+                {
+                    System.out.print(dictList.get(dictList.indexOf(capitalize(strBuild.toString()))));
+                    wordsFound++;
                 }
             } 
         }
@@ -114,5 +118,10 @@ public class Dictionary
             {'z', 'x'}
         };
         return map;
+    }
+    
+    private String capitalize(String str)
+    {
+        return str.substring(0, 1).toUpperCase() + str.substring(1);
     }
 }
