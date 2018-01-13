@@ -1,11 +1,22 @@
-package program1;
-
-import java.util.ArrayList;
-
 /**
  *
  * @author Scott Mitchell & Daniel Jirasek
+ * 01/12/18
+ * Program 1
+ * Description:
+ * 
+ * class TextMessage uses several methods and a constructor to modify the
+ * user inputted string so that it can be looked at by the dictionary class and 
+ * displayed in Program 1.
  */
+
+
+package program1;
+
+//allows the use of the ArrayList class
+import java.util.ArrayList;
+
+
 public class TextMessage
 {
     //orignal message
@@ -21,10 +32,15 @@ public class TextMessage
         //all non-word characters and non-whitespace characters are removed
         this.msg = this.msg.replaceAll("[\\W][\\d]+","");
         
+        //String array is composed using any whitespace characters present
+        //to split each word in the string up
         String[] words = msg.split(" ");
         
+       //for each loop adds each element to the String array words
        for(String elements: words)
        {
+           //taking the current element of string array words and adding it
+           //to msgWords
            this.msgWords.add(elements);
        }
     }
@@ -41,6 +57,7 @@ public class TextMessage
         return msgWords.get(element);
     }
     
+    //retrieving the size of the string array msgWords
     public int getMsgWordsLength()
     {
         return msgWords.size();
