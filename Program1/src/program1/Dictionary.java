@@ -37,14 +37,12 @@ public class Dictionary
         //keeps track of if we found anything
         int wordsFound = 0;
         
-        
-        
         //for loop looks through each letter in word
         //i will stand in for the position of the current character in the word
         for(int i = 0; i < word.length(); i++)
         {
             //use stringbuilder to modify string with elements of heuristicKeyMap more easily
-            StringBuilder strBuild = new StringBuilder(word);
+            StringBuilder strBuild = new StringBuilder(word.toLowerCase());
             //keeps track of the current letter
             char currentChar = word.charAt(i);
             
@@ -73,7 +71,7 @@ public class Dictionary
                     System.out.print(dictList.get(dictList.indexOf(strBuild.toString())) + " ");
                     //counter keeps track of if there are any matches found probably could've put this in its own function but meh
                     wordsFound++;
-                }                
+                }
             } 
         }
         //if no matches were found in the dictionary
