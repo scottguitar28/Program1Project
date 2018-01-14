@@ -41,6 +41,7 @@ public class TextMessage
        {
            //taking the current element of string array words and adding it
            //to msgWords
+           elements = elements.replaceAll("[^a-zA-Z]", "");
            this.msgWords.add(elements);
        }
     }

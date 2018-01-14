@@ -41,7 +41,6 @@ public class Dictionary
     {
         //keeps track of if we found anything
         int wordsFound = 0;
-
         //for loop looks through each letter in word
         //i will stand in for the position of the current character in the word
         for (int i = 0; i < word.length(); i++)
